@@ -50,22 +50,26 @@
 						P Out of SMALL tag and then <small>P within Small <a href="http://hakim.se">Link Demo</a></small>
 					</p>
 				</section>
-			
                 <section>
-                    <p>Use the code tag for 
-                        <code>
-                        inline code. Use HTML &amp;entities;.
-                        </code>
-                    </p>
-                </section>
                 
-                <section>
-                    <p>
-                    <q>Q tag looks like this</q>
-                    </p>
-                    <blockquote>Blockquote looks like this, usually with a border around</blockquote>
-                </section>
+                    <section>
+                        <p>Use the code tag for 
+                            <code>
+                            inline code. 
+                            </code>
+                            Remember to use HTML &amp;entities;.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                        <q>Q tag looks like this</q>
+                        </p>
+                        <blockquote>Blockquote looks like this, usually with a border around</blockquote>
+                    </section>
                 
+                </section>
+                    
                 <section>
                     <!-- Here, there is no indent, because of the PRE tag. Though, datatrirm doesn-t count the line break-->
                     <pre><code data-trim>
@@ -73,6 +77,21 @@
 https://mothereff.in/html-entities
 &#x3C;/code&#x3E;
                     </code></pre>
+                </section>
+                
+                <section>
+                    <!-- There IS an AUDIO tag, with a CONTROLS parameter TT-->
+                    <!-- AUTOPLAY is another nice parameter. Though it starts playing from the first slide
+                    DATA-AUTOPLAY is the REVEAL.JS parameter that will solve this situation. 
+                    It autopauses too, continuing where it stopped playing -->
+                    <!-- DATA-IGNORE means that it will start playing on the right slide, but will continue on following ones -->
+                    <!-- Such parameters are HTML5, that's why I doubted they existed -->
+                    
+                    
+                    <!--
+                    Hiding audio, just to avoid trouble.
+                    <audio src="media/fc1.mp3" controls data-autoplay></audio>
+                    -->
                 </section>
                 
             </div>
@@ -112,13 +131,13 @@ https://mothereff.in/html-entities
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
                     { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
-                    { src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+                //    { src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
+                //    { src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
 				],
                 keyboard: { 
-                    82: function() { Recorder.toggleRecording(); },	// press 'r' to start/stop recording
-                    90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
-                    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+                //    82: function() { Recorder.toggleRecording(); },	// press 'r' to start/stop recording
+                //    90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+                //    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
                 }
 			});
 		</script>
