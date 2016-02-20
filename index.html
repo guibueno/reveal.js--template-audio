@@ -3,10 +3,11 @@
 
 	<head>
 		<meta charset="utf-8">
+        <!-- CHANGE TITLE -->
+		<title>Template</title>
 
-		<title>Metalingua</title>
-
-		<meta name="description" content="Add Description">
+        <!-- CHANGE DESCRIPTION AND AUTHOR -->
+		<meta name="description" content="Template Description">
 		<meta name="author" content="Gui Bueno">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,7 +15,8 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
+		<!-- POSSIBLY CHANGE THEME -->
+        <link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
 		<!-- Code syntax highlighting -->
@@ -36,29 +38,50 @@
 
 	<body>
 
-		<div class="reveal"><!--reveal -->
-
-			
+		<div class="reveal"><!--BEGINNING OF REVEAL.JS CODE -->
 			<div class="slides">
                 
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>H1 Demo</h1>
+                    <h2>H2 Demo</h2>
+					<h3>H3 Demo</h3>
+                    <h4>H4 Demo</h4>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						P Out of SMALL tag and then <small>P within Small <a href="http://hakim.se">Link Demo</a></small>
 					</p>
-
 				</section>
 			
-            
-            </div> <!--slides-->
-		</div> <!--reveal-->
+                <section>
+                    <p>Use the code tag for 
+                        <code>
+                        inline code. Use HTML &amp;entities;.
+                        </code>
+                    </p>
+                </section>
+                
+                <section>
+                    <p>
+                    <q>Q tag looks like this</q>
+                    </p>
+                    <blockquote>Blockquote looks like this, usually with a border around</blockquote>
+                </section>
+                
+                <section>
+                    <!-- Here, there is no indent, because of the PRE tag. Though, datatrirm doesn-t count the line break-->
+                    <pre><code data-trim>
+&#x3C;code data-trim&#x3E;
+https://mothereff.in/html-entities
+&#x3C;/code&#x3E;
+                    </code></pre>
+                </section>
+                
+            </div>
+		</div> <!--END OF REVEAL.JS CODE -->
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -98,8 +121,6 @@
                     84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
                 }
 			});
-
 		</script>
-
 	</body>
 </html>
