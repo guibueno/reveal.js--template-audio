@@ -17,9 +17,10 @@
 
 		<!-- POSSIBLY CHANGE THEME -->
         <link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night_gui.css" id="theme">
 
 		<!-- Code syntax highlighting -->
+        <!-- Check other versions in highlight.js -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
@@ -29,6 +30,7 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+            /* add ?print-pdf to the nagivation bar */
 		</script>
 
 		<!--[if lt IE 9]>
@@ -41,11 +43,14 @@
 		<div class="reveal"><!--BEGINNING OF REVEAL.JS CODE -->
 			<div class="slides">
                 
-				<section>
-					<h1>H1 Demo</h1>
-                    <h2>H2 Demo</h2>
-					<h3>H3 Demo</h3>
-                    <h4>H4 Demo</h4>
+				<section data-autoslide="10000">
+					<h1 class="fragment shrink" data-fragment-index="1">H1 Demo</h1>
+                    <h2 class="fragment fade-out" data-fragment-index="1">H2 Demo</h2>
+					<!-- or green, or blue-->
+                    <h3 class="fragment highlight-red" data-fragment-index="0">H3 Demo</h3>
+                    <!-- data-fragment-index takes intervals, but only positve integers -->
+                    <h4 class="fragment grow"  data-fragment-index="14">H4 Demo</h4>
+                    <h5 class="fragment roll-in" data-fragment-index="0">Is there an H5?</h5>
 					<p>
 						P Out of SMALL tag and then <small>P within Small <a href="http://hakim.se">Link Demo</a></small>
 					</p>
@@ -109,6 +114,43 @@ https://mothereff.in/html-entities
                     <h1>Hidden AUDIO here</h1>
                 </section>
                 
+                <section data-transition="zoom">
+                    <h3>Data-transition can be changed slide-by slide</h3>
+                    <p>If not working, try setting the global to <small>default</small></p>
+                </section>
+                
+                <section data-transition-speed="fast">
+                    <h3>Data-transition-speed</h3>
+                    <p>Data-transition can be different from data-background-transition. The result might look nice</p>
+                </section>
+                
+                <section>
+                    <!-- image example with inline style to eliminate automatic border & background -->
+                    <img src="images/bridge.jpg" alt="Bridge Photo" style="border: none; box-shadow:none; width:30%" />
+                    <p><a href="/">This is a link to the first slide</a> and this is regular text</p>
+                    <br>
+                    <p><a href="#example">And this will take you to #example slide in a weird way</a></p>
+                    <!-- vertical slides should use the following syntax: #/#, as in 2/3. -->
+                </section>
+                <section>
+                    <section>
+                        <div class="navigate-down">Oh, jardineira calada</div>
+                    </section>
+                    <section>
+                        <p>Sim, você descobriu que se podia clicar em jardineira</p>
+                    </section>
+                </section>
+                <section id="example" data-transition="none">
+                    <h1>Slides can have IDs.</h1>
+                    <p>But, for some reason, if I let the transition default, it'll act really weirdly</p>
+                </section>
+                
+                <section>
+                    <h2>Data-state</h2>
+                    <p>Creates a class for the whole HTML, which can be targetted in the css.</p>
+                    <p><small>For example: <q>data-state="slideshow"</q></small></p>
+                    <blockquote>"Not the cleanest effect in the world, but may give you the ability to change the css in specific occasions", Ray</blockquote>
+                </section>
             </div>
 		</div> <!--END OF REVEAL.JS CODE -->
 
@@ -119,10 +161,23 @@ https://mothereff.in/html-entities
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
+				// Controls are the arrow signs in the inferior/right corner
+                // They need to be set true in order to user navigate-(up/down/right/left) controls
+                controls: true,
+				
+                // That's the little progress bar in the bottom
+                progress: false,
+                
+                // Global auto-slide parameter in miliseconds
+                autoSlide: 3000,
+                // "data-autoslide" parameter for slide-by-slide changes
+                // fragments count as a slide change
+                
 				history: true,
 				center: true,
+                
+                // Standard css effect to roll links
+                rollingLinks: true,
 
                 audio: {
                     prefix: 'audio/', 	// audio files are stored in the "audio" folder
@@ -136,7 +191,13 @@ https://mothereff.in/html-entities
                     startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
                 },
                 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// Change global transition
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                /* also, according to lynda: cube/page/linear */
+                
+                // Change global transition speed
+                transitionSpeed: 'slow',
+                /* the guy said: you should put a comma, because this is an object*/
                 	
 				// Optional reveal.js plugins
 				dependencies: [
